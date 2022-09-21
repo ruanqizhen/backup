@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>小学英语作文生成</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="{{ url_for('static', filename='shiciweb.js') }}"></script>
+</head>
+<body>
+<div>
+    <h1>小学英语作文生成</h1>
+    <p>这是一个测试项目，用于生成小学英语作文。在下面的输入框输入作文标题，比如：“My Mom”，然后点击“生成”按钮。</p>
+    <form id="input_form" name="input_form" action="/composition/" method="post">
+        <input type="text" maxlength="30" size=30 name="seed" placeholder="My Mom" id="seed">
+        <input type="submit" value="生成" id="submit_button" onclick="setWaitingMessage()">
+    </form>
+        <br><br>
+    <div id="result_section">
+        <p>{{ title }}</p>
+        <textarea rows="30" cols="50">{{ result }}</textarea>
+    </div>
+</div>
+</body>
+</html>

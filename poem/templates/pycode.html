@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>生成简单Python代码</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="{{ url_for('static', filename='shiciweb.js') }}"></script>
+</head>
+<body>
+<div>
+    <h1>生成简单Python代码</h1>
+    <p>这是一个测试项目，用于生成简单Python代码。在下面的输入框输入程序要求，比如：“输入一个数组，输出数组第二大的元素”，然后点击“生成”按钮。</p>
+    <form id="input_form" name="input_form" action="/pycode/" method="post">
+        <textarea rows="5" cols="80" name="seed" placeholder="输入为一个实数数组 v_array 和一个实数 target，
+输出数组中大于 target 的元素的个数。" id="seed"></textarea>
+        <input type="submit" value="生成" id="submit_button" onclick="setWaitingMessage()">
+    </form>
+        <br><br>
+    <div id="result_section">
+        <textarea rows="16" cols="80">{{ result }}</textarea>
+    </div>
+</div>
+</body>
+</html>
